@@ -9,15 +9,6 @@ load_dotenv()
 openai_key = os.getenv("OPENAI_API_KEY")
 client = OpenAI(api_key=openai_key)
 
-# Database connection details
-DB_PARAMS = {
-    "dbname": os.getenv("DB_NAME"),
-    "user": os.getenv("DB_USER"),
-    "password": os.getenv("DB_PASSWORD"),
-    "host": os.getenv("DB_HOST"),
-    "port": os.getenv("DB_PORT"),
-    "sslmode": "require"
-}
 
 def augment_query_generated(user_query, model="gpt-3.5-turbo"):
     """Generate an augmented query to improve retrieval."""
@@ -46,6 +37,16 @@ def retrieve_similar_case(augumented_query):
     )
     query_embedding = response.data[0].embedding  # 1536-dimensional vector
 
+    # Database connection details
+    DB_PARAMS = {
+        "dbname": os.getenv("DB_NAME"),
+        "user": os.getenv("DB_USER"),
+        "password": os.getenv("DB_PASSWORD"),
+        "host": os.getenv("DB_HOST"),
+        "port": os.getenv("DB_PORT"),
+        "sslmode": "require"
+    }
+    
     # Connect to PostgreSQL
     conn = psycopg2.connect(**DB_PARAMS)
     cursor = conn.cursor()
