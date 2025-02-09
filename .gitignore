@@ -2,7 +2,7 @@
 __pycache__/
 *.pyc
 *.pyo
-.DS_Store
+summarize/.DS_Store
 
 # Ignore environment variables
 .env
