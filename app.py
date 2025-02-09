@@ -16,9 +16,6 @@ load_dotenv()
 openai_key = os.getenv("OPENAI_API_KEY")
 client = OpenAI(api_key=openai_key)
 
-# Initialize FastAPI app
-app = FastAPI()
-
 # Database connection details
 DB_PARAMS = {
     "dbname": os.getenv("DB_NAME"),
@@ -29,6 +26,8 @@ DB_PARAMS = {
     "sslmode": "require"
 }
 
+# Initialize FastAPI app
+app = FastAPI()
 
 # Define the request model
 class QueryRequest(BaseModel):
