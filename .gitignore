@@ -1,0 +1,16 @@
+# Ignore Python cache files
+__pycache__/
+*.pyc
+*.pyo
+
+# Ignore environment variables
+.env
+
+# Ignore virtual environment
+venv/
+
+# Other documents
+summarize/chosen_50/
+summarize/error_log.txt
+search_cases.py
+summaries.json
