@@ -11,7 +11,16 @@ summarize/.DS_Store
 venv/
 
 # Other documents
+# Dataset
 summarize/chosen_50/
-summarize/error_log.txt
-search_cases.py
 summaries.json
+summarize/error_log.txt
+
+#Local testing
+search_cases.py
+user_interface.py
+
+# Improving context awareness
+rag_functions_p.py
+app_p.py
+user_interface_p.py
